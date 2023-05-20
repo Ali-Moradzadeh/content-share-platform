@@ -111,18 +111,19 @@ class AlbumFileDetail(models.Model):
 
 class PrivateChat(models.Model):
     code = models.UUIDField(default=uuid.uuid4, editable=False)
-    members = models.ManyToManyField(UserProfile, through="PrivateChatPare", related_name="private_chat_pare")
+    members = models.ManyToManyField(UserProfile, through="PrivateChatDetail", related_name="private_chat_pare")
     
     def __str__(self):
         return str(self.code)
 
 
-class PrivateChatPare(models.Model):
+class PrivateChatDetail(models.Model):
     member = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name="private_chat_details")
     private_chat = models.ForeignKey(PrivateChat, on_delete=models.CASCADE, related_name="private_chat_details")
     
     class Meta:
         unique_together = ("member", "private_chat")
+        ordering = ("private_chat", )
     
     def clean(self, *args, **kwargs):
         if self.private_chat.members.count() >= 2:

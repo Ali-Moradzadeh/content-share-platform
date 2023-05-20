@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Comment, Post, PostPart, Story, StoryInteraction, BookmarkAlbum, AlbumFileDetail, ChatRoom, ChatRoomJoinDetail, Chat, ChatReaction, PrivateChat, PrivateChatPare
+from .models import Comment, Post, PostPart, Story, StoryInteraction, BookmarkAlbum, AlbumFileDetail, ChatRoom, ChatRoomJoinDetail, Chat, ChatReaction, PrivateChat, PrivateChatDetail
 
 
 register = lambda i: admin.site.register(i)
@@ -16,4 +16,4 @@ register(ChatRoomJoinDetail)
 register(Chat)
 register(ChatReaction)
 register(PrivateChat)
-register(PrivateChatPare)
+register(PrivateChatDetail)

@@ -62,4 +62,37 @@ class SimpleViewSet(viewsets.ViewSet):
 
 SPECIAL_CHARACTERS = ('?', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+')
 
-
+INITIAL_USERS = [
+    {
+        "username": "ali",
+        "email": "ali@gmail.com",
+        "password": "Ali1111?",
+        "phone_number": "09000000000",
+        "is_staff": True,
+        "is_superuser": True,
+    },
+    {
+        "username": "zari",
+        "email": "zahra@gmail.com",
+        "password": "Zahra1111?",
+        "phone_number": "09111111111",
+        "is_staff": False,
+        "is_superuser": False,
+    },
+    {
+        "username": "amir",
+        "email": "amir@gmail.com",
+        "password": "Amir1111?",
+        "phone_number": "09222222222",
+        "is_staff": False,
+        "is_superuser": False,
+    },
+    {
+        "username": "sina",
+        "email": "sina@gmail.com",
+        "password": "Sina1111?",
+        "phone_number": "09333333333",
+        "is_staff": False,
+        "is_superuser": False,
+    },
+]
