@@ -29,13 +29,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # Add additional fields for profile customization
     bio = models.TextField(blank=True)
     profile_picture = models.ImageField(upload_to='profiles/', blank=True, null=True)
-    # Add any other fields as per your requirements
+    followings = models.ManyToManyField("self", related_name="followers", symmetrical=False, blank=True)
 
-    # Add methods or properties for additional profile functionalities as needed
-    # Add methods or properties for additional profile functionalities as needed
-    
     def __str__(self):
         return self.user.username
